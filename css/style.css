@@ -121,7 +121,7 @@ body {
   background: #fff;
   font-family: "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
   font-size: 100%;
-  color: #fff;
+  color: #696969;
   line-height: 1.5;
   min-height: 100vh;
   display: -webkit-flex;
@@ -161,7 +161,7 @@ sub {
 }
 a {
   text-decoration: none;
-  color: #fff;
+  color: #696969;
 }
 a:hover,
 a:focus {
@@ -217,15 +217,15 @@ h1 {
   clear: both;
 }
 ::-webkit-input-placeholder {
-  color: #fff;
+  color: #696969;
   padding: 2px 0 0 4px;
 }
 ::-moz-placeholder {
-  color: #fff;
+  color: #696969;
   padding: 2px 0 0 4px;
 }
 :-ms-input-placeholder {
-  color: #fff;
+  color: #696969;
   padding: 2px 0 0 4px;
 }
 ::-webkit-input-placeholder::before {
@@ -258,7 +258,7 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: '\f00d';
-  color: #fff;
+  color: #696969;
   padding-right: 4px;
 }
 /* css3 animate */
@@ -393,7 +393,7 @@ body >header {
   -webkit-box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
   box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
   background: url("../") center #222;
-  color: #fff;
+  color: #696969;
   padding: 1em 0 0.8em;
 }
 @media only screen and (min-width: 1024px) {
@@ -414,7 +414,7 @@ body >header >div {
 }
 body >header a {
   display: block;
-  color: #fff;
+  color: #696969;
 }
 #imglogo {
   float: left;
@@ -559,8 +559,8 @@ header nav ul li a:hover {
   -webkit-appearance: textfield;
   font-size: 0.87em;
   line-height: 1.7;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #696969;
+  color: #696969;
   background: transparent;
   width: 80%;
   padding-left: 0.5em;
@@ -646,10 +646,10 @@ header nav ul li a:hover {
   line-height: 2;
 }
 #main section.post a p {
-  color: #fff;
+  color: #696969;
 }
 #main section.post a time {
-  color: #fff;
+  color: #696969;
   display: block;
   margin: 0.5em 0;
   font-size: 0.9em;
@@ -685,7 +685,7 @@ header nav ul li a:hover {
   -webkit-border-radius: 15px;
   border-radius: 15px;
   background: #fff;
-  color: #fff;
+  color: #696969;
   text-decoration: none;
 }
 #main article.post-expand .article-more-link a:hover {
@@ -958,13 +958,13 @@ article .article-content .kb {
   border: 1px solid #000;
   background-color: code-color;
   color: #000;
-  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #696969 inset;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #696969 inset;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   display: inline-block;
   margin: 0 0.1em;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 #696969;
   line-height: 1.5;
   white-space: nowrap;
 }
@@ -992,7 +992,7 @@ article .article-content h3,
 article .article-content h4,
 article .article-content h5,
 article .article-content h6 {
-  color: #fff;
+  color: #696969;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1238,7 +1238,7 @@ footer.article-footer {
   font-size: 1.2em;
   font-family: "FontAwesome";
   text-align: center;
-  color: #fff;
+  color: #696969;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 1.5em;
@@ -1250,7 +1250,7 @@ footer.article-footer {
   margin-left: -0.75em;
 }
 .share a:hover:before {
-  color: #fff;
+  color: #696969;
 }
 .article-share-twitter:before {
   content: "\f099";
@@ -1296,7 +1296,7 @@ footer.article-footer {
   text-shadow: 0 1px #5e2343;
 }
 .hoverqrcode {
-  background: #fff;
+  background: #696969;
   border: 3px solid #2ca6cb;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -1328,7 +1328,7 @@ footer.article-footer {
   margin: 0 0.3em;
 }
 .comments-count-link:hover {
-  color: #fff !important;
+  color: #696969 !important;
   background: #696969;
 }
 .article-tags,
@@ -1378,7 +1378,7 @@ footer.article-footer {
   background: #808080;
 }
 .article-tags a:hover {
-  color: #fff;
+  color: #696969;
   background: #696969;
 }
 .article-categories {
@@ -1397,7 +1397,7 @@ footer.article-footer {
   margin: 0 0.3em;
 }
 .article-category-link:hover {
-  color: #fff !important;
+  color: #696969 !important;
   background: #696969;
 }
 .article-nav {
@@ -1419,7 +1419,7 @@ footer.article-footer {
 .article-nav .prev a:hover,
 .article-nav .next a:hover {
   background: #696969;
-  color: #fff;
+  color: #696969;
 }
 .article-nav .prev {
   width: 100%;
@@ -1525,7 +1525,7 @@ section.comment {
   overflow: hidden;
   line-height: 1.5em;
   font-size: 1em;
-  color: #fff;
+  color: #696969;
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);
@@ -1537,7 +1537,7 @@ section.comment {
 }
 #toc.toc-aside strong {
   padding: 0.3em 0;
-  color: #fff;
+  color: #696969;
 }
 #toc.toc-aside:hover {
   -webkit-transition: opacity 0.3s ease-out;
@@ -1575,8 +1575,8 @@ section.comment {
 }
 .openaside a {
   display: block;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #696969;
+  border: 1px solid #696969;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   background: #222;
@@ -1717,7 +1717,7 @@ section.comment {
   }
 }
 .rsspart a {
-  color: #fff;
+  color: #696969;
   display: block;
   padding: 0.625em 0;
   text-align: center;
@@ -1927,7 +1927,7 @@ footer {
   display: block;
   width: 0.5em;
   height: 6.25em;
-  border-right: 0.125em solid #fff;
+  border-right: 0.125em solid #696969;
   margin: 0 auto;
 }
 @media only screen and (min-width: 768px) {
@@ -1975,7 +1975,7 @@ footer {
   line-height: 1.3em;
   width: 90%;
   margin: 0 auto;
-  color: #fff;
+  color: #696969;
 }
 @media only screen and (min-width: 768px) {
   .info {
@@ -2007,7 +2007,7 @@ footer {
   float: left;
   display: block;
   width: 14%;
-  color: #fff;
+  color: #696969;
   font-size: 185%;
   padding: 0.5em;
 }
@@ -2072,7 +2072,7 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   font-family: "covered_by_your_graceregular";
   width: 100%;
-  color: #fff;
+  color: #696969;
   text-align: center;
 }
 @media only screen and (min-width: 768px) {
