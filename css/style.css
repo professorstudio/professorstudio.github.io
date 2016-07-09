@@ -642,7 +642,7 @@ header nav ul li a:hover {
   border-left: 0.5em solid #222;
 }
 #main section.post a h1 {
-  color: #696969;
+  color: #fff;
   line-height: 2;
 }
 #main section.post a p {
@@ -721,7 +721,7 @@ header nav ul li a:hover {
   padding: 0.5em 1em;
 }
 #page-nav a {
-  color: #696969;
+  color: #fff;
 }
 #page-nav a:hover {
   background: #000;
@@ -766,7 +766,7 @@ header nav ul li a:hover {
   font-weight: bold;
 }
 #page-nav .space {
-  color: #696969;
+  color: #fff;
 }
 /* page layout */
 @media only screen and (min-width: 1024px) {
@@ -810,11 +810,11 @@ header nav ul li a:hover {
 }
 .archive-title h2 {
   width: 90%;
-  color: #696969;
+  color: #fff;
   font-size: 120%;
 }
 .archive-title a {
-  color: #696969;
+  color: #fff;
   -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
@@ -881,7 +881,7 @@ header nav ul li a:hover {
 .page a,
 .link a,
 .photo a {
-  color: #696969;
+  color: #fff;
 }
 .post a:hover,
 .page a:hover,
@@ -944,7 +944,7 @@ article header.article-info >p.article-time:before {
 }
 article .article-content {
   padding: 1.5em 4%;
-  color: #fff;
+  color: #696969;
   font-size: 100%;
 }
 article .article-content:before,
@@ -1329,7 +1329,7 @@ footer.article-footer {
 }
 .comments-count-link:hover {
   color: #696969 !important;
-  background: #696969;
+  background: #fff;
 }
 .article-tags,
 .article-categories {
@@ -1379,7 +1379,7 @@ footer.article-footer {
 }
 .article-tags a:hover {
   color: #696969;
-  background: #696969;
+  background: #fff;
 }
 .article-categories {
   color: #333;
@@ -1398,7 +1398,7 @@ footer.article-footer {
 }
 .article-category-link:hover {
   color: #696969 !important;
-  background: #696969;
+  background: #fff;
 }
 .article-nav {
   padding: 0 10%;
@@ -1418,7 +1418,7 @@ footer.article-footer {
 }
 .article-nav .prev a:hover,
 .article-nav .next a:hover {
-  background: #696969;
+  background: #fff;
   color: #696969;
 }
 .article-nav .prev {
@@ -1595,7 +1595,7 @@ section.comment {
   color: #222;
 }
 .closeaside a:hover {
-  color: #696969;
+  color: #fff;
 }
 .closeaside a::before {
   font-family: "FontAwesome";
@@ -1626,12 +1626,12 @@ section.comment {
 }
 .asidetitle {
   font-size: 1.1em;
-  color: #696969;
+  color: #fff;
   padding: 0 0 0.3125em 0;
   border-bottom: 0.1875em solid #000;
 }
 .asidetitle a {
-  color: #696969;
+  color: #fff;
 }
 .asidetitle a:hover {
   color: #222;
@@ -2017,7 +2017,7 @@ footer {
   }
 }
 .social-font a:hover:before {
-  color: #696969;
+  color: #fff;
 }
 .icon-weibo:before,
 .icon-github:before,
@@ -2081,10 +2081,10 @@ footer {
   }
 }
 .copyright a {
-  color: #696969;
+  color: #fff;
 }
 .copyright a:hover {
-  color: #696969;
+  color: #fff;
   text-decoration: underline;
 }
 .cc-license {
@@ -2231,7 +2231,7 @@ footer {
   margin-top: 1em;
 }
 .article-content .gist .gist-file .gist-meta a {
-  color: #696969;
+  color: #fff;
   font-weight: normal;
 }
 .article-content .gist .gist-file .gist-meta a:hover {
