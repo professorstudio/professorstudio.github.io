@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Deep Reinforcement Learning ICML 2016 Tutorial &amp; My Research Interest | Prof.Xuechen&#39;s Personal Blog</title>
+    <title>Deep Reinforcement Learning ICML 2016 Tutorial[I] &amp; My Research Interest | Prof.Xuechen&#39;s Personal Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Xuechen Liu">
@@ -14,15 +14,15 @@
     <meta name="description" content="那么，在第一篇博客把该说的开场客套话都说了【对】，感谢的人目前其实也就一个（就不感谢罗方浩-请见右侧fanhao’s blog），那么如上一篇文章最后所约定的，ICML2016上的这篇Tutorial的个人大致解读就在这里开始吧。
 首先声明本人只是一个转过专业，但喜欢玩情怀的AI准研究生，因此在解读的过程中难免出现很多的纰漏和失误，还望大家指出并通过我个人的邮箱和Linkedin赐教，言辞尖锐一点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Deep Reinforcement Learning ICML 2016 Tutorial & My Research Interest">
+<meta property="og:title" content="Deep Reinforcement Learning ICML 2016 Tutorial[I] & My Research Interest">
 <meta property="og:url" content="http://blog.professorstudio1994.com/2016/07/12/reinforcement0/index.html">
 <meta property="og:site_name" content="Prof.Xuechen's Personal Blog">
 <meta property="og:description" content="那么，在第一篇博客把该说的开场客套话都说了【对】，感谢的人目前其实也就一个（就不感谢罗方浩-请见右侧fanhao’s blog），那么如上一篇文章最后所约定的，ICML2016上的这篇Tutorial的个人大致解读就在这里开始吧。
 首先声明本人只是一个转过专业，但喜欢玩情怀的AI准研究生，因此在解读的过程中难免出现很多的纰漏和失误，还望大家指出并通过我个人的邮箱和Linkedin赐教，言辞尖锐一点">
 <meta property="og:image" content="http://blog.professorstudio1994.com/public/img">
-<meta property="og:updated_time" content="2016-07-12T15:49:41.000Z">
+<meta property="og:updated_time" content="2016-07-12T15:55:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Deep Reinforcement Learning ICML 2016 Tutorial & My Research Interest">
+<meta name="twitter:title" content="Deep Reinforcement Learning ICML 2016 Tutorial[I] & My Research Interest">
 <meta name="twitter:description" content="那么，在第一篇博客把该说的开场客套话都说了【对】，感谢的人目前其实也就一个（就不感谢罗方浩-请见右侧fanhao’s blog），那么如上一篇文章最后所约定的，ICML2016上的这篇Tutorial的个人大致解读就在这里开始吧。
 首先声明本人只是一个转过专业，但喜欢玩情怀的AI准研究生，因此在解读的过程中难免出现很多的纰漏和失误，还望大家指出并通过我个人的邮箱和Linkedin赐教，言辞尖锐一点">
 <meta name="twitter:image" content="http://blog.professorstudio1994.com/public/img">
@@ -83,7 +83,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/12/reinforcement0/" title="Deep Reinforcement Learning ICML 2016 Tutorial &amp; My Research Interest" itemprop="url">Deep Reinforcement Learning ICML 2016 Tutorial &amp; My Research Interest</a>
+      <a href="/2016/07/12/reinforcement0/" title="Deep Reinforcement Learning ICML 2016 Tutorial[I] &amp; My Research Interest" itemprop="url">Deep Reinforcement Learning ICML 2016 Tutorial[I] &amp; My Research Interest</a>
   </h1>
   <p class="article-author">By
        
@@ -106,7 +106,8 @@
 		<p>那么，在第一篇博客把该说的开场客套话都说了【对】，感谢的人目前其实也就一个（就不感谢罗方浩-请见右侧fanhao’s blog），那么如上一篇文章最后所约定的，ICML2016上的这篇Tutorial的个人大致解读就在这里开始吧。</p>
 <p>首先声明本人只是一个转过专业，但喜欢玩情怀的AI准研究生，因此在解读的过程中难免出现很多的纰漏和失误，还望大家指出并通过我个人的邮箱和Linkedin赐教，言辞尖锐一点没有关系，但希望不要出现“装逼”“就这水平还解读文章”之类的人身攻击，大家起跑点不同但都在努力着，希望更多的是交流而不是互相看扁。</p>
 <p>作为2016年来最受科技界瞩目的公司没有之一，DeepMind直到目前为止都保证了学术论文的高产出率和高质量。这次算是他们对于目前深度增强学习方面工作的一个总结和成果展示，其中就包括了震惊世界的那只道格“AlphaGo”。当然，这是一篇顶级学术会议的tutorial而不是商业展示，因此成果方面他们只在最后用了寥寥数笔描述。当然，版权所有，侵权必究。因此附上资源链接： <a href="https://icml.cc/2016/tutorials/deep_rl_tutorial.pdf" target="_blank" rel="external">Deep Reinforcement Learning Tutorial</a></p>
-<p>这篇Tutorial主题分为五部分：深度学习，增强学习以及深度增强学习的三个原创衍生：Value-Based, Policy-Based和Model-Based。我在这部分将尽量在少涉及数学的情况下作出解读，对，尽量~</p>
+<p>这篇Tutorial主题分为五部分：深度学习及增强学习，深度增强学习的三个原创衍生：Value-Based, Policy-Based和Model-Based，最后一部分是成果展示。我将对此尽量在少涉及数学的情况下作出解读，对，尽量~</p>
+<p>本博文主要讲述第一部分：综述，深度学习和增强学习。</p>
 <h2 id="Section-0-Nutshell-Overview"><a href="#Section-0-Nutshell-Overview" class="headerlink" title="Section 0: Nutshell Overview"></a>Section 0: Nutshell Overview</h2><p>行业永远以应用为先，所以这篇Tutorial在最开始先给我们讲述了深度学习和增强学习各自在智能系统中的目的。</p>
 <p>深度学习(Deep Learning, DL)是一个通用的框架。在这个框架中，我们拥有直接的输入以及给定的目标，框架唯一要做的事就是在“知识”较为缺乏的情况下找到能够实现这个目标的方法。增强学习(Reinforcement Learning, RL)则不同，它主要是为能够运转的智能体系统(agent)，使用奖惩信号来影响系统接下来的行动，最终目的是选择能够最大化自身利益(reward)的方案和目标。简单地说，对于一个智能系统，深度学习是给定目标和数据找到实现目标的方法的框架，而增强学习是让系统找到使得自身利益最大化的目标的框架。</p>
 <p>因此，DeepMind在这里提出了他们对于智能的理解，当然这也是很多人的看法：AI = RL + DL。通用智能的发展同时需要RL的目标和DL的方法。</p>
