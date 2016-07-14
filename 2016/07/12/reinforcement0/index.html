@@ -110,13 +110,13 @@
 <meta property="og:site_name" content="Prof.Xuechen's Personal Blog">
 <meta property="og:description" content="那么，在第一篇博客把该说的开场客套话都说了【对】，感谢的人目前其实也就一个（就不感谢罗方浩-请见右侧fanhao’s blog），那么如上一篇文章最后所约定的，ICML2016上的这篇Tutorial的个人大致解读就在这里开始吧。
 首先声明本人只是一个转过专业，但喜欢玩情怀的AI准研究生，因此在解读的过程中难免出现很多的纰漏和失误，还望大家指出并通过我个人的邮箱和Linkedin赐教，言辞尖锐一点">
-<meta property="og:image" content="http://xuechenliu1994.com/public/img">
-<meta property="og:updated_time" content="2016-07-14T14:19:05.000Z">
+<meta property="og:image" content="http://xuechenliu1994.com/public/img/agent.png">
+<meta property="og:updated_time" content="2016-07-14T15:07:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Reinforcement Learning ICML 2016 Tutorial & My Research Interest">
 <meta name="twitter:description" content="那么，在第一篇博客把该说的开场客套话都说了【对】，感谢的人目前其实也就一个（就不感谢罗方浩-请见右侧fanhao’s blog），那么如上一篇文章最后所约定的，ICML2016上的这篇Tutorial的个人大致解读就在这里开始吧。
 首先声明本人只是一个转过专业，但喜欢玩情怀的AI准研究生，因此在解读的过程中难免出现很多的纰漏和失误，还望大家指出并通过我个人的邮箱和Linkedin赐教，言辞尖锐一点">
-<meta name="twitter:image" content="http://xuechenliu1994.com/public/img">
+<meta name="twitter:image" content="http://xuechenliu1994.com/public/img/agent.png">
 
 
 
@@ -343,7 +343,7 @@
 <footer><strong>--Michael Wooldridge</strong><cite>An Introduction to MultiAgent Systems</cite></footer></blockquote>
 <p>其实上文就传达了一个意思：代理系统就是一个可以自行确定目标并做出行动的系统，对于人类来说，这个系统叫做“大脑”。</p>
 <p>一个代理系统是要不断和周围的环境进行交互并确定行动目标进而做出行动的。就像前面所说的，它的主要任务是找到使其自身利益最大化的目标，而这个目标的确定过程就是代理系统的交互算法。</p>
-<img src="/public/img" class="agent.png">
+<img src="/public/img/agent.png" class="agent.png">
 <p>和之前一样，我在这部分会尽量避开数学解释。如图中所示，在每单位时间(time-step)，代理系统要执行三个动作：<br>1）执行指令(action)；<br>2）接收观察和测量到的外部数据(observation)；<br>3）接收奖惩信号(scalar reward)；<br>而外部环境则执行下面三个动作：<br>1）感知代理系统的动作并作出反应；<br>2）为代理系统生成下个时间段的外部数据和奖惩信号。</p>
 <p>在时间段t的时候，之前所有的指令，外部数据和奖惩信号会被储存在某个地方，称为经验(experience)，这个很好理解；而代理系统目前的状态则是由过去的经历决定的，非要扯一下数学的话：s(t) = f(experience)</p>
 <p>而一个应用了增强学习的代理系统则一般情况下除了前面所描述的所有性质之外，包含以下至少一个功能：<br>1）政策(policy)，也就是代理系统对于外部环境做出反应的手段，一般用行为函数(behaviour function)描述；<br>2）评估函数(value function)，顾名思义，对于当前系统的状态和/或执行结果做出评估；<br>3）模型(model)，代理系统对于外部环境的表示，也就是它“眼里”的环境。这个部分对于相同的环境，不同代理系统所呈现的模型可能除了几个基本参数值外会有很大差别。</p>
