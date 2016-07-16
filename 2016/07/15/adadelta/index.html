@@ -111,7 +111,7 @@ Adadelta算法是一种目前为止使用非常广泛的用于调节Learning Rat
 <meta property="og:description" content="前面我也曾经说过，会对一些我阅读过的重要论文做一些自己的简要记录，放到这里。这篇文章就是第一篇我的记录，也是目前我在实习的最重要的Inspiration的来源——Adadelta算法。原文链接：Adadelta
 Adadelta算法是一种目前为止使用非常广泛的用于调节Learning Rate的算法。相比于传统的SGD他受超参数问题的影响较小，在较大的超参调节范围内都能达到很好的学习效果。这个算法">
 <meta property="og:image" content="http://thumbnail0.baidupcs.com/thumbnail/0b10f997192edbb7a50c81a3a414e9b7?fid=3993527906-250528-416579910854629&time=1468641600&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-rgNuhMK%2FOLHOlz9To%2FPSLJFzwd4%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=4580692205520176036&dp-callid=0&size=c710_u400&quality=100">
-<meta property="og:updated_time" content="2016-07-16T04:07:16.000Z">
+<meta property="og:updated_time" content="2016-07-16T13:21:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解读Adadelta">
 <meta name="twitter:description" content="前面我也曾经说过，会对一些我阅读过的重要论文做一些自己的简要记录，放到这里。这篇文章就是第一篇我的记录，也是目前我在实习的最重要的Inspiration的来源——Adadelta算法。原文链接：Adadelta
@@ -335,6 +335,7 @@ Adadelta算法是一种目前为止使用非常广泛的用于调节Learning Rat
 <p>整体上Adadelta的思路就是基于Adagrad的基础上使用了两种优化方法：<br>1）使用过去的w个梯度而不是全部梯度用于参数迭代更新。在这里不得不承认Matthew的理论基础的扎实———他使用了类似于动量因子(Momentum)的平均方法（上图第4步）将梯度有机累加起来，这里如果没有系统的学习神经计算里的Momentum Learning部分而且对其有深刻理解的话八成是想不到这一点的，当然也不排除他在Google黑科技下做了很多的尝试的可能；<br>2）使用Hessian近似方法和RMS计算近似二阶牛顿权重更新，这里用到了一些他所在大学里大牛Yann LeCun当年的成果。这部分个人认为———对，个人认为———其实是Adadelta的一个盲区———Matthew的方法很大程度上避免了二阶计算的复杂度不假，但是首先Hessian本身也具有很高的复杂度（好吧毕竟降了一维的运算，还是降低了），其次由于在这一步里当前的update是计算目标而不是已知量，不得已Matthew只能假设局部的低曲率(curvature)，因此也就保留了这个更新算法受到数据Sharpness程度的影响。从他的论文来看，在MNIST数据集上这个问题还没有被很明显的放大。</p>
 <p>目前我正在试图实现这套算法并将其运用到医学离散信号识别中，上述的问题我个人并不希望出现，不过鉴于医学信号普遍具有不稳定性和长相关性，因此还需进一步验证。</p>
 <p>写作仓促，文中相比应有一些理解性错误，欢迎邮件批评指正，拒绝人身攻击，拒绝PY！</p>
+<p>另：Deep Reinforcement Learning Tutorial的坑将不会填上，原因是我发现了一篇解释更详尽，并且更加具有前瞻性的博文———来自OpenAI课题组成员，前斯坦福博士生Andrej Karpathy的Deep RL的Overview。在这里奉上链接：<a href="http://karpathy.github.io/2016/05/31/rl/" target="_blank" rel="external">Andrej Karpathy's Deep RL</a>。我在这两天将会详尽地阅读这篇文章但鉴于不是长者，能力和姿势水平有限，不会做出翻译，如有问题希望通过各种渠道和大家一同交流。</p>
 
       
     </div>
