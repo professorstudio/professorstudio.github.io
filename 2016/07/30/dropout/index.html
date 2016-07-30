@@ -86,7 +86,7 @@
 <link href="../../../../css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Neural Computation,Literature Review," />
 
 
 
@@ -102,19 +102,22 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="OK，毕业典礼的原因又鸽了五六天。这次决定搞一篇大的，也是作为我实习后半部分的一个开始。
+这次的Review如题目所说是对于神经网络里目前非常流行的防止小样本情况下过拟合的方法Dropout的介绍以及其在递归神经网络（Recurrent Neural Networks, RNN）里面的应用。整个介绍分为两部分，对应两篇论文：1）    Srivastava和Hinton双大神的 Dropout:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://xuechenliu1994.com/2016/07/02/hello-world/index.html">
+<meta property="og:title" content="Review - Dropout with Its Application on Recurrent Neural Networks">
+<meta property="og:url" content="http://xuechenliu1994.com/2016/07/30/dropout/index.html">
 <meta property="og:site_name" content="Prof.Xuechen's Personal Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-07-09T10:41:27.000Z">
+<meta property="og:description" content="OK，毕业典礼的原因又鸽了五六天。这次决定搞一篇大的，也是作为我实习后半部分的一个开始。
+这次的Review如题目所说是对于神经网络里目前非常流行的防止小样本情况下过拟合的方法Dropout的介绍以及其在递归神经网络（Recurrent Neural Networks, RNN）里面的应用。整个介绍分为两部分，对应两篇论文：1）    Srivastava和Hinton双大神的 Dropout:">
+<meta property="og:image" content="http://xuechenliu1994.com/Users/searcherliu/blog/blog/source/img">
+<meta property="og:image" content="http://xuechenliu1994.com/Users/searcherliu/blog/blog/source/img">
+<meta property="og:updated_time" content="2016-07-30T02:58:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Review - Dropout with Its Application on Recurrent Neural Networks">
+<meta name="twitter:description" content="OK，毕业典礼的原因又鸽了五六天。这次决定搞一篇大的，也是作为我实习后半部分的一个开始。
+这次的Review如题目所说是对于神经网络里目前非常流行的防止小样本情况下过拟合的方法Dropout的介绍以及其在递归神经网络（Recurrent Neural Networks, RNN）里面的应用。整个介绍分为两部分，对应两篇论文：1）    Srivastava和Hinton双大神的 Dropout:">
+<meta name="twitter:image" content="http://xuechenliu1994.com/Users/searcherliu/blog/blog/source/img">
 
 
 
@@ -135,9 +138,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://xuechenliu1994.com/2016/07/02/hello-world/"/>
+  <link rel="canonical" href="http://xuechenliu1994.com/2016/07/30/dropout/"/>
 
-  <title> Hello World | Prof.Xuechen's Personal Blog </title>
+  <title> Review - Dropout with Its Application on Recurrent Neural Networks | Prof.Xuechen's Personal Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -285,7 +288,7 @@ Quick">
             
             
               
-                Hello World
+                Review - Dropout with Its Application on Recurrent Neural Networks
               
             
           </h1>
@@ -297,8 +300,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-02T20:23:56+08:00" content="2016-07-02">
-              2016-07-02
+            <time itemprop="dateCreated" datetime="2016-07-30T10:29:30+08:00" content="2016-07-30">
+              2016-07-30
             </time>
           </span>
 
@@ -325,15 +328,26 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>OK，毕业典礼的原因又鸽了五六天。这次决定搞一篇大的，也是作为我实习后半部分的一个开始。</p>
+<p>这次的Review如题目所说是对于神经网络里目前非常流行的防止小样本情况下过拟合的方法Dropout的介绍以及其在递归神经网络（Recurrent Neural Networks, RNN）里面的应用。整个介绍分为两部分，对应两篇论文：<br>1）    Srivastava和Hinton双大神的 Dropout: <a href="https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf" target="_blank" rel="external">A Simple Way to Prevent Neural Networks from Overfitting</a><br>2）    OpenAI创始人Wojciech Zaremba的博士期间的一篇作品 <a href="http://arxiv.org/abs/1409.2329" target="_blank" rel="external">Recurrent Neural Network Regularization</a> 其实这篇文章对于我本人的重要性要高一些，因为目前我主用RNN解决问题，而上一篇论文并没有涉及到RNN。</p>
+<h2 id="Motivation-from-Practical-Staff"><a href="#Motivation-from-Practical-Staff" class="headerlink" title="Motivation from Practical Staff"></a>Motivation from Practical Staff</h2><p>Dropout在RNN的应用是我希望能够搞清楚的RNN问题之一。因为如上两篇posts所说，在医学离散信号数据（尤其是呼吸类研究方面）中，信号的长相关性和不确定性是几乎无法避免的。所以对于这种时序性信号RNN，尤其是LSTM是不错的选择。但是Dropout作为一种已经得到广泛使用的方法在RNN上的整体效果不佳。第二篇文章提供了一种Dropout在RNN上调参的方法，也是目前被一些技术性博文认为是参考价值较强的方法之一（Google引用率130+相对于其它方法已经不错，我会说其他的好多都是个位数或压根没有？），很多深度学习框架据说也主要参考这种方法将Dropout部署在框架里。</p>
+<h2 id="Motivation-of-Dropout-–-Hinton’s"><a href="#Motivation-of-Dropout-–-Hinton’s" class="headerlink" title="Motivation of Dropout – Hinton’s"></a>Motivation of Dropout – Hinton’s</h2><p>Dropout一开始的灵感来源于生物繁殖：在常规的繁殖过程中，后代的基因来源是一半父亲一半母亲，外加一点极小的变异因子。物种的性别来源于基因，而基因的选择是随机的，却同时被自然选择有机的控制着。自然选择通过这个过程控制性别的平衡，以保证物种的生存繁衍——的确是很有创意的想法，科学来源于生活啊……</p>
+<p>而Dropout所要面对的问题在当时也很头疼：一般情况下，研究者们面对大量的数据都会采用组合不同已有模型的办法建模，在神经网络这边也是这个套路。但多个模型的组合会使超参数（hyper-parameter）的调节变得极为困难。而且很多时候我们其实得不到想要的那么多数据和对应的标记，即使有，训练的效率大部分时候也是达不到要求的。Dropout其实是在这个背景下对于NN的一种“瘦身”，不仅可以防止过拟合，同时也提高了NN的训练效率。</p>
+<h2 id="Dropout-from-Srivastava-amp-Hinton"><a href="#Dropout-from-Srivastava-amp-Hinton" class="headerlink" title="Dropout from Srivastava &amp; Hinton"></a>Dropout from Srivastava &amp; Hinton</h2><p>Dropout，正如Hinton的题目所说，其实在算法概念上非常的简单，就是在每一个训练的epoch中，对于隐含层使用概率赋值的方式随机“弃掉”一部分元素，算法如下：</p>
+<img src="/Users/searcherliu/blog/blog/source/img" class="[png]" title="[200px] [200px] [Dropout [Figure 1: An NN layer with Dropout applied]]">
+<p>没错，非常简单———就是往每一层的输出上加了个伯努利（Bernoulli）概率变量（有谁尝试过别的概率分布吗？）。因此算法部分本身反而没什么好说的。</p>
+<p>要提到的是对于含有Dropout神经网络的训练。这一部分Srivastava和Hinton引用了一种正则化方法———最大范数正则（Max-norm Regularization）。这里他们是用类似于投影的办法，将大于某个常数c的权重值投影到一个半径为c的球面上。没有大于c的值则保留。这样一来，唯一需要调节的超参数就是c。调节的方法见2005年Srebro等人的工作(我才不会说因为数学大复杂我搞了半天都没搞懂捏╭(╯^╰)╮)。</p>
+<p>值得注意的是，Dropout在每一个epoch中“弃掉”的元素并不是没用了，相反，在下一个epoch的时候它们会被重置并重新使用Dropout进行选择<br>。其实这倒是和Boosting稍微有点像了……算是一个叠加版本的Boosting或者Bagging吧。</p>
+<p>Dropout根据原文所说，主要应用于对于整个网络的调参工作上。在Learning Rate较小的情况下，Dropout可以对整个网络的Generalization Error实现不错的提升效果。 </p>
+<p>Hinton等人实验使用了当今几个较为流行的数据集如MNIST，TIMIT，CIFAR等等，Dropout相对于传统的网络在Generalization Error上都取得更好的效果。（细节：貌似ReLU相对于常规的Logistic作为激活函数对于FFN效果更好）</p>
+<p>第一篇论文的其他关于预训练，噪声调节（Dropout本身相当于给神经网络带来noise）和隐含函数的部分由于暂时没考虑到，目前我没有再细读但#不一定#会再更新。</p>
+<p>附录里面提供了几点训练Dropout神经网络的建议：<br>1)    一个神经网络隐含层最多含有n个元素，初设Dropout的概率是p，那么对于当前网络最优的元素个数应设为n/p。原文作者认为这至少适用于CNN和一般的FFN；<br>2)    Learning Rate尽量设得高一点，文中建议相对于一般的网络，带有Dropout的网络的Learning Rate应设为10到100倍大，Momentum则建议是0.95~0.99；<br>3)    超参数c的值一般为3~4；<br>4)    概率值p不要设得太高，0.8左右对于一般的图像或声音数据集较为适宜。</p>
+<p>值得注意的是，由于论文并没有使用过RNN做检测，以上建议也就仅局限于其它网络如ConvNet，Feed-Forward，DBM等。</p>
+<h2 id="Dropout-in-RNN-from-Zaremba"><a href="#Dropout-in-RNN-from-Zaremba" class="headerlink" title="Dropout in RNN from Zaremba"></a>Dropout in RNN from Zaremba</h2><p>基本的RNN结构和LSTM想必已经不再需要多说，之前两篇博文已经介绍过了。这里为了保证Notation的一致性贴上LSTM的图例：</p>
+<img src="/Users/searcherliu/blog/blog/source/img" class="[png]" title="[200px] [200px] [lstm [Figure 2: An NN" alt="s LSTM element]]">
+<p>以及RNN的结构图：</p>
+<p>{}</p>
+<p>之前也提到过，RNN之所以能够不错地处理时序数据，就是因为它本身可以时序展开。这里算是做出了一个比较</p>
 
       
     </div>
@@ -354,18 +368,26 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="../../../../tags/Neural-Computation/" rel="tag">#Neural Computation</a>
+          
+            <a href="../../../../tags/Literature-Review/" rel="tag">#Literature Review</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="../../23/deepthoughts1/" rel="next" title="A Summary of Current Deep Learning Framework I used">
+                <i class="fa fa-chevron-left"></i> A Summary of Current Deep Learning Framework I used
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../../10/annoucements/" rel="prev" title="My Very First Blog - Congrats!">
-                My Very First Blog - Congrats! <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -392,7 +414,7 @@ Quick">
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://xuechenliu1994.com/2016/07/02/hello-world/"
+           data-href="http://xuechenliu1994.com/2016/07/30/dropout/"
            data-numposts="10">
       </div>
     
@@ -524,7 +546,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-from-Practical-Staff"><span class="nav-number">1.</span> <span class="nav-text">Motivation from Practical Staff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-of-Dropout-–-Hinton’s"><span class="nav-number">2.</span> <span class="nav-text">Motivation of Dropout – Hinton’s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout-from-Srivastava-amp-Hinton"><span class="nav-number">3.</span> <span class="nav-text">Dropout from Srivastava & Hinton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout-in-RNN-from-Zaremba"><span class="nav-number">4.</span> <span class="nav-text">Dropout in RNN from Zaremba</span></a></li></ol></div>
             
           </div>
         </section>
