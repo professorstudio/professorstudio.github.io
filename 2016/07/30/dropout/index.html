@@ -86,7 +86,7 @@
 <link href="../../../../css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Literature Review Theory,Neural Computation," />
+  <meta name="keywords" content="Neural Computation,Literature Review Theory," />
 
 
 
@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://xuechenliu1994.com/img/lstm.png">
 <meta property="og:image" content="http://xuechenliu1994.com/img/rnndropout.png">
 <meta property="og:image" content="http://xuechenliu1994.com/img/updatedropout.png">
-<meta property="og:updated_time" content="2016-07-30T03:51:14.000Z">
+<meta property="og:updated_time" content="2016-07-30T03:55:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Review - Dropout with Its Application on Recurrent Neural Networks">
 <meta name="twitter:description" content="OK，毕业典礼的原因又鸽了五六天。这次决定搞一篇大的，也是作为我实习后半部分的一个开始。
@@ -338,7 +338,7 @@
 <h2 id="Dropout-from-Srivastava-amp-Hinton"><a href="#Dropout-from-Srivastava-amp-Hinton" class="headerlink" title="Dropout from Srivastava &amp; Hinton"></a>Dropout from Srivastava &amp; Hinton</h2><p>Dropout，正如Hinton的题目所说，其实在算法概念上非常的简单，就是在每一个训练的epoch中，对于隐含层使用概率赋值的方式随机“弃掉”一部分元素，算法如下：</p>
 <img src="/img/dropout.png" title="Figure 1: An NN layer with Dropout applied">
 <p>没错，非常简单———就是往每一层的输出上加了个伯努利（Bernoulli）概率变量（有谁尝试过别的概率分布吗？）。因此算法部分本身反而没什么好说的。</p>
-<p>要提到的是对于含有Dropout神经网络的训练。这一部分Srivastava和Hinton引用了一种正则化方法———最大范数正则（Max-norm Regularization）。这里他们是用类似于投影的办法，将大于某个常数c的权重值投影到一个半径为c的球面上。没有大于c的值则保留。这样一来，唯一需要调节的超参数就是c。调节的方法见2005年Srebro等人的工作(我才不会说因为数学大复杂我搞了半天都没搞懂捏╭(╯^╰)╮)。</p>
+<p>要提到的是对于含有Dropout神经网络的训练。这一部分Srivastava和Hinton引用了一种正则化方法———最大范数正则（Max-norm Regularization）。这里他们是用类似于投影的办法，将大于某个常数c的权重值投影到一个半径为c的球面上。没有大于c的值则保留。这样一来，唯一需要调节的超参数就是c。调节的方法见<a href="http://ttic.uchicago.edu/~nati/Publications/SrebroShraibmanCOLT05.pdf" target="_blank" rel="external">2005年Srebro等人的工作</a>(我才不会说因为数学大复杂我搞了半天都没搞懂捏╭(╯^╰)╮)。</p>
 <p>值得注意的是，Dropout在每一个epoch中“弃掉”的元素并不是没用了，相反，在下一个epoch的时候它们会被重置并重新使用Dropout进行选择<br>。其实这倒是和Boosting稍微有点像了…算是一个叠加版本的Boosting或者Bagging吧。</p>
 <p>Dropout根据原文所说，主要应用于对于整个网络的调参工作上。在Learning Rate较小的情况下，Dropout可以对整个网络的Generalization Error实现不错的提升效果。 </p>
 <p>Hinton等人实验使用了当今几个较为流行的数据集如MNIST，TIMIT，CIFAR等等，Dropout相对于传统的网络在Generalization Error上都取得更好的效果。（细节：貌似ReLU相对于常规的Logistic作为激活函数对于FFN效果更好）</p>
@@ -379,9 +379,9 @@
       
         <div class="post-tags">
           
-            <a href="../../../../tags/Literature-Review-Theory/" rel="tag">#Literature Review Theory</a>
-          
             <a href="../../../../tags/Neural-Computation/" rel="tag">#Neural Computation</a>
+          
+            <a href="../../../../tags/Literature-Review-Theory/" rel="tag">#Literature Review Theory</a>
           
         </div>
       
