@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://xuechenliu1994.com/img/lstm.png">
 <meta property="og:image" content="http://xuechenliu1994.com/img/rnndropout.png">
 <meta property="og:image" content="http://xuechenliu1994.com/img/updatedropout.png">
-<meta property="og:updated_time" content="2016-07-30T03:27:20.000Z">
+<meta property="og:updated_time" content="2016-07-30T03:51:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Review - Dropout with Its Application on Recurrent Neural Networks">
 <meta name="twitter:description" content="OK，毕业典礼的原因又鸽了五六天。这次决定搞一篇大的，也是作为我实习后半部分的一个开始。
@@ -347,11 +347,16 @@
 <p>值得注意的是，由于论文并没有使用过RNN做检测，以上建议也就仅局限于其它网络如ConvNet，Feed-Forward，DBM等。</p>
 <h2 id="Motivation-of-Zaremba-et-al"><a href="#Motivation-of-Zaremba-et-al" class="headerlink" title="Motivation of Zaremba et al"></a>Motivation of Zaremba et al</h2><p>而在之前工作基础之上，Zaremba等人通过literature review，发现了Dropout在RNN上表现不佳的问题，而这也导致了RNN的网络规模一直无法进一步像CNN/MLP一样扩大。他们希望解决这个问题。</p>
 <h2 id="Dropout-in-RNN-from-Zaremba"><a href="#Dropout-in-RNN-from-Zaremba" class="headerlink" title="Dropout in RNN from Zaremba"></a>Dropout in RNN from Zaremba</h2><p>基本的RNN结构和LSTM想必已经不再需要多说，之前两篇博文已经介绍过了。这里为了保证Notation的一致性贴上LSTM的图例：</p>
-<img src="/img/lstm.png" title="Figure 2: An NN" alt="s LSTM element">
+<img src="/img/lstm.png" title="Figure 2: An LSTM element">
 <p>以及RNN的结构图。之前也提到过，RNN之所以能够不错地处理时序数据，就是因为它本身可以时序展开。这里算是做出了一个比较形象的解释。</p>
 <img src="/img/rnndropout.png" title="Figure 3: Recurrent Neural Network with Dropout applied">
 <p>从上图可以看出来RNN的数据传递分为两个部分：横向的是时序部分，时间t是自变量；纵向的是非时序部分，自变量可以认为是input和LSTM的权重（其实大部分时候它们是常数）。这里Zaremba提出了不同于以往Dropout应用的观点（也谈不上以往…就隔了一年）：将Dropout仅使用在纵向（上图虚线部分）更新而横向传播保持不变。而如果RNN的更新元素是LSTM的话，它的更新公式就变成了这样：</p>
 <img src="/img/updatedropout.png" title="Figure 4: LSTM update with Dropout applied">
+<p>Dropout在这里面起到了一个很重要的作用：它会在纵向传播中将出现次数较少的信息“消除”掉（文中使用的词是‘corrupt’）而不干扰出现频率较高的信息。这些信息在横向传播中会通过LSTM的特性保留下来。Zaremba认为这对于RNN来说是很不错的一个提升想法，因为之前Dropout在横纵向都被使用的时候，一些出现频率较高的欣喜在横向传播时也会被‘Dropout’掉。</p>
+<p>实验方面他们采用了三个时序数据集和一个图像数据集进行检测，都是RNN研究中使用较频繁的数据集。但我很奇怪为什么没有TIMIT，是因为Hinton祖师爷当年用DNN跑得挺好自己怕玩脱搞不过么…回头试一试。</p>
+<p>提升方面，其实整体上Dropout对于RNN效果的提升可以认为“并不是特别明显”，至少相对于第一篇论文里DNN和ConvNet加上Dropout后大杀四方的表现，RNN的提升确实说服力不是很足。不过很多深度学习框架依然采用了这种办法对RNN使用Dropout进行调节以达到网络兼容的效果，无奈之举~</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>综上所述，Dropout，这种对于绝大多数前向传播为主的神经网络效果和效率提升都极为明显的防止过拟合的手段，在RNN上目前并没有太好的表现。主要原因应该在于Dropout的使用对于数据本身的破坏在RNN上体现的较为明显。ConvNet和MLP之所以没有出现这个问题，一个是因为它们不是循环处理同一批数据，也没有所谓的“记忆”之说，另一个原因就是目前行业上愿意将大量的数据投入到这类网络的研究中，减弱了Dropout的影响。而RNN本身作为处理时序数据为主的网络，没有（一般也不需要）大量的数据和并行服务器。想让RNN在时序数据处理上得到进一步的提升，我个人认为或许还是需要SSL的介入。不过这阵子一直没有时间好好研习，MIT那本书下载下来之后就没动过~忙过这阵子看看情况吧。</p>
+<p>嗯，研习中~大家各自努力~接下来会开新领域的坑，讲真暑假之后我可能就不再搞这方面了~</p>
 
       
     </div>
@@ -550,7 +555,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-from-Practical-Staff"><span class="nav-number">1.</span> <span class="nav-text">Motivation from Practical Staff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-of-Dropout-–-Hinton’s"><span class="nav-number">2.</span> <span class="nav-text">Motivation of Dropout – Hinton’s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout-from-Srivastava-amp-Hinton"><span class="nav-number">3.</span> <span class="nav-text">Dropout from Srivastava & Hinton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-of-Zaremba-et-al"><span class="nav-number">4.</span> <span class="nav-text">Motivation of Zaremba et al</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout-in-RNN-from-Zaremba"><span class="nav-number">5.</span> <span class="nav-text">Dropout in RNN from Zaremba</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-from-Practical-Staff"><span class="nav-number">1.</span> <span class="nav-text">Motivation from Practical Staff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-of-Dropout-–-Hinton’s"><span class="nav-number">2.</span> <span class="nav-text">Motivation of Dropout – Hinton’s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout-from-Srivastava-amp-Hinton"><span class="nav-number">3.</span> <span class="nav-text">Dropout from Srivastava & Hinton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-of-Zaremba-et-al"><span class="nav-number">4.</span> <span class="nav-text">Motivation of Zaremba et al</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout-in-RNN-from-Zaremba"><span class="nav-number">5.</span> <span class="nav-text">Dropout in RNN from Zaremba</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">6.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
             
           </div>
         </section>
