@@ -86,7 +86,7 @@
 <link href="../../../../css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Neural Computation,Literature Review Theory," />
+  <meta name="keywords" content="Literature Review Theory,Neural Computation," />
 
 
 
@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://xuechenliu1994.com/img/lstm.png">
 <meta property="og:image" content="http://xuechenliu1994.com/img/rnndropout.png">
 <meta property="og:image" content="http://xuechenliu1994.com/img/updatedropout.png">
-<meta property="og:updated_time" content="2016-07-31T02:24:45.000Z">
+<meta property="og:updated_time" content="2016-07-31T02:25:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Review - Dropout with Its Application on Recurrent Neural Networks">
 <meta name="twitter:description" content="OK，毕业典礼的原因又鸽了五六天。这次决定搞一篇大的，也是作为我实习后半部分的一个开始。
@@ -358,6 +358,7 @@
 <p>笔者使用Keras库的Recurrent Layer的示例代码做了一点微小的工作~基本上来说，和笔者的推测出入不大———没有Dropout的情况下，系统对于IMDB时序数据集的Test Score最低但效率最高，耗时最少；双向Dropout和纵向Dropout相比不仅loss较高而且耗时较长。</p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>综上所述，Dropout，这种对于绝大多数前向传播为主的神经网络效果和效率提升都极为明显的防止过拟合的手段，在RNN上目前并没有太好的表现。主要原因应该在于Dropout的使用对于数据本身的破坏在RNN上体现的较为明显。ConvNet和MLP之所以没有出现这个问题，一个是因为它们不是循环处理同一批数据，也没有所谓的“记忆”之说，另一个原因就是目前行业上愿意将大量的数据投入到这类网络的研究中，减弱了Dropout的影响。而RNN本身作为处理时序数据为主的网络，没有（一般也不需要）大量的数据和并行服务器。想让RNN在时序数据处理上得到进一步的提升，我个人认为或许还是需要SSL相关理论的介入。不过这阵子一直没有时间好好研习，MIT那本书下载下来之后就没动过~忙过这阵子看看情况吧。</p>
 <p>嗯，研习中~大家各自努力~接下来会开新领域的坑，讲真暑假之后我可能就不再搞这方面了~</p>
+<p>另：目前博客只支持Facebook评论功能。</p>
 
       
     </div>
@@ -380,9 +381,9 @@
       
         <div class="post-tags">
           
-            <a href="../../../../tags/Neural-Computation/" rel="tag">#Neural Computation</a>
-          
             <a href="../../../../tags/Literature-Review-Theory/" rel="tag">#Literature Review Theory</a>
+          
+            <a href="../../../../tags/Neural-Computation/" rel="tag">#Neural Computation</a>
           
         </div>
       
