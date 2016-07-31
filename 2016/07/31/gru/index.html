@@ -86,7 +86,7 @@
 <link href="../../../../css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Neural Computation,Literature Review Theory," />
 
 
 
@@ -102,22 +102,21 @@
 
 
 
-<meta name="description" content="终于~我的第一个个人博客已经搭建起来了！虽然还有很多的功能需要完善和部署，但起码我已经可以开始写文章了。先在这里恭喜一下自己，也希望筒子们在本博客里多多关照！
-我希望能够在这个博客里和大家分享关于我接下来的一切——学术，篮球，音乐。希望大家多多指教和切磋！どうぞよろしくお愿いします！【手动黑人鞠躬】
-在这里我要感谢泳哥:Mr. Neil Oxford Li Jr. 对于我的博客搭建的大力支持！本博">
+<meta name="description" content="不得不说很多事情和灵感都来源于一些极小的提示和意外———上午照例喝着味全吃着香肠跑着脚本，结果在上一篇文章里有记述（Dropout针对于LSTM的结果部分）。然而我无意中看到了引用的一部分源码的作者的一小句注释：Use GRU for fun. 好吧，周日上午这么闲，试试看咯，反正用的是库，改两行代码而已嘛~
+GRU的大致结构我之前算是有所了解，和LSTM区别和作用都不是太大，相比于LSTM少了一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My Very First Blog - Congrats!">
-<meta property="og:url" content="http://xuechenliu1994.com/2016/07/10/annoucements/index.html">
+<meta property="og:title" content="Review - Gated Recurrent Units">
+<meta property="og:url" content="http://xuechenliu1994.com/2016/07/31/gru/index.html">
 <meta property="og:site_name" content="Prof.Xuechen's Personal Blog">
-<meta property="og:description" content="终于~我的第一个个人博客已经搭建起来了！虽然还有很多的功能需要完善和部署，但起码我已经可以开始写文章了。先在这里恭喜一下自己，也希望筒子们在本博客里多多关照！
-我希望能够在这个博客里和大家分享关于我接下来的一切——学术，篮球，音乐。希望大家多多指教和切磋！どうぞよろしくお愿いします！【手动黑人鞠躬】
-在这里我要感谢泳哥:Mr. Neil Oxford Li Jr. 对于我的博客搭建的大力支持！本博">
-<meta property="og:updated_time" content="2016-07-12T13:26:29.000Z">
+<meta property="og:description" content="不得不说很多事情和灵感都来源于一些极小的提示和意外———上午照例喝着味全吃着香肠跑着脚本，结果在上一篇文章里有记述（Dropout针对于LSTM的结果部分）。然而我无意中看到了引用的一部分源码的作者的一小句注释：Use GRU for fun. 好吧，周日上午这么闲，试试看咯，反正用的是库，改两行代码而已嘛~
+GRU的大致结构我之前算是有所了解，和LSTM区别和作用都不是太大，相比于LSTM少了一">
+<meta property="og:image" content="http://xuechenliu1994.com/img/grulstm.png">
+<meta property="og:updated_time" content="2016-07-31T05:13:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Very First Blog - Congrats!">
-<meta name="twitter:description" content="终于~我的第一个个人博客已经搭建起来了！虽然还有很多的功能需要完善和部署，但起码我已经可以开始写文章了。先在这里恭喜一下自己，也希望筒子们在本博客里多多关照！
-我希望能够在这个博客里和大家分享关于我接下来的一切——学术，篮球，音乐。希望大家多多指教和切磋！どうぞよろしくお愿いします！【手动黑人鞠躬】
-在这里我要感谢泳哥:Mr. Neil Oxford Li Jr. 对于我的博客搭建的大力支持！本博">
+<meta name="twitter:title" content="Review - Gated Recurrent Units">
+<meta name="twitter:description" content="不得不说很多事情和灵感都来源于一些极小的提示和意外———上午照例喝着味全吃着香肠跑着脚本，结果在上一篇文章里有记述（Dropout针对于LSTM的结果部分）。然而我无意中看到了引用的一部分源码的作者的一小句注释：Use GRU for fun. 好吧，周日上午这么闲，试试看咯，反正用的是库，改两行代码而已嘛~
+GRU的大致结构我之前算是有所了解，和LSTM区别和作用都不是太大，相比于LSTM少了一">
+<meta name="twitter:image" content="http://xuechenliu1994.com/img/grulstm.png">
 
 
 
@@ -138,9 +137,9 @@
 
 
 
-  <link rel="canonical" href="http://xuechenliu1994.com/2016/07/10/annoucements/"/>
+  <link rel="canonical" href="http://xuechenliu1994.com/2016/07/31/gru/"/>
 
-  <title> My Very First Blog - Congrats! | Prof.Xuechen's Personal Blog </title>
+  <title> Review - Gated Recurrent Units | Prof.Xuechen's Personal Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -288,7 +287,7 @@
             
             
               
-                My Very First Blog - Congrats!
+                Review - Gated Recurrent Units
               
             
           </h1>
@@ -300,8 +299,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-10T23:11:46+08:00" content="2016-07-10">
-              2016-07-10
+            <time itemprop="dateCreated" datetime="2016-07-31T11:05:30+08:00" content="2016-07-31">
+              2016-07-31
             </time>
           </span>
 
@@ -328,12 +327,15 @@
       
 
       
-        <p>终于~我的第一个个人博客已经搭建起来了！虽然还有很多的功能需要完善和部署，但起码我已经可以开始写文章了。先在这里恭喜一下自己，也希望筒子们在本博客里多多关照！</p>
-<p>我希望能够在这个博客里和大家分享关于我接下来的一切——学术，篮球，音乐。<br>希望大家多多指教和切磋！どうぞよろしくお愿いします！【手动黑人鞠躬】</p>
-<p>在这里我要感谢泳哥:Mr. Neil Oxford Li Jr. 对于我的博客搭建的大力支持！本博客的大体样式也是来自于泳哥提供的素材。希望大家也可以去多多支持和阅览泳哥的博客（已附在右边链接中，虽然好像现在的更新频率没那么高了？）！牛津的大神哟~~【舔】</p>
-<p>这篇文章作为博客的第一篇文章，我决定在下一篇文章介绍ICML2016上的一篇关于增强学习的Tutorial，同时表达一下本博客的学术立场~哦不对，应该说是倾向比较合适~以及现在和未来我，作为一名普通的准研究生，所关注的方向和领域。估计满篇将会是片面见解和粗鄙之语，望大家指出和更正我的错误，谢谢兄弟们！</p>
-<p>刘学琛</p>
-
+        <p>不得不说很多事情和灵感都来源于一些极小的提示和意外———上午照例喝着味全吃着香肠跑着脚本，结果在上一篇文章里有记述（Dropout针对于LSTM的结果部分）。然而我无意中看到了引用的一部分源码的作者的一小句注释：Use GRU for fun. 好吧，周日上午这么闲，试试看咯，反正用的是库，改两行代码而已嘛~</p>
+<p>GRU的大致结构我之前算是有所了解，和LSTM区别和作用都不是太大，相比于LSTM少了一些功能单元。但结果自然是令人吃惊的，否则我也不会写这篇博文：GRU在5个epoch之后不仅用时大概仅为LSTM的2/3左右，准确率甚至略胜于LSTM（虽然差距在小数点后第二位）。毫无疑问，这让我对这个结构单元产生了兴趣。那么，就来好好研究一下这家伙吧。</p>
+<p>GRU的Review一般认为来自于两篇论文，均可认为来自于蒙特利尔大学Bengio组的团队。本文所有图解均来源于这两篇论文：<br>1）<a href="https://arxiv.org/abs/1409.1259" target="_blank" rel="external">On the Properties of Neural Machine Translation: Encoder–Decoder Approaches</a>。GRU的起始论文，主要用于RNN和CNN，应用领域主要是智能翻译（Machine Translation）；<br>2）<a href="https://arxiv.org/abs/1412.3555" target="_blank" rel="external">Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a>。GRU和其它递归单元（recurrent units），尤其是LSTM的比较。和上一篇博文一样，我本人侧重于第二篇文章。</p>
+<h2 id="Overview-of-Gated-Recurrent-Unit"><a href="#Overview-of-Gated-Recurrent-Unit" class="headerlink" title="Overview of Gated Recurrent Unit"></a>Overview of Gated Recurrent Unit</h2><p>Gated Recurrent Unit（GRU）是Bengio大牛在蒙特利尔大学的团队于2014年开发出来的，由于结构相似，很多人都会拿早些的LSTM和这个单元进行比较来介绍它，这个在后文细说。一开始GRU并不叫这个名字而是叫Gate Hidden Neurons，不过计算结构和现在比并没有什么变化。</p>
+<p>那么，对，还是话说简单点，上图：</p>
+<img src="/img/grulstm.png" title="Figure 1: LSTM and GRU">
+<p>上面也说过，相比于LSTM，GRU的结构看上去简单一些，门的数量少了一个（一个update gate，一个reset gate），也不是先求和再激活而是直接将update gate的输出数据放入激活函数进行计算。</p>
+<p>【未完待续~】</p>
+<h2 id="Effect-on-Sequential-Data"><a href="#Effect-on-Sequential-Data" class="headerlink" title="Effect on Sequential Data"></a>Effect on Sequential Data</h2><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>
       
     </div>
 
@@ -353,22 +355,26 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="../../../../tags/Neural-Computation/" rel="tag">#Neural Computation</a>
+          
+            <a href="../../../../tags/Literature-Review-Theory/" rel="tag">#Literature Review Theory</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../../02/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="../../30/dropout/" rel="next" title="Review - Dropout with Its Application on Recurrent Neural Networks">
+                <i class="fa fa-chevron-left"></i> Review - Dropout with Its Application on Recurrent Neural Networks
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../../12/reinforcement0/" rel="prev" title="Deep Reinforcement Learning ICML 2016 Tutorial & My Research Interest">
-                Deep Reinforcement Learning ICML 2016 Tutorial & My Research Interest <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -395,7 +401,7 @@
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://xuechenliu1994.com/2016/07/10/annoucements/"
+           data-href="http://xuechenliu1994.com/2016/07/31/gru/"
            data-numposts="10">
       </div>
     
@@ -527,7 +533,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-of-Gated-Recurrent-Unit"><span class="nav-number">1.</span> <span class="nav-text">Overview of Gated Recurrent Unit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Effect-on-Sequential-Data"><span class="nav-number">2.</span> <span class="nav-text">Effect on Sequential Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">3.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
             
           </div>
         </section>
